@@ -84,8 +84,8 @@ button:hover {
   transition: transform 0.3s;
   background: none;
   cursor: move;
-  width: 50px;             /* medium width */
-  height: 50px;            /* medium height */
+  width: 30px;             /* medium width */
+  height: 30px;            /* medium height */
   display: flex;
   align-items: center;
   justify-content: center;
