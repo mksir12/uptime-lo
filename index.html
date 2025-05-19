@@ -110,25 +110,37 @@
     if (!jobPasswords[job.jobId]) jobPasswords[job.jobId] = "";
 
     const last = job.lastExecution
-      ? new Date(job.lastExecution).toLocaleString()
-      : "N/A";
-    const next = job.nextExecution
-      ? new Date(job.nextExecution).toLocaleString()
-      : "N/A";
+  ? new Date(job.lastExecution * 1000).toLocaleString()
+  : "N/A";
 
+const next = job.nextExecution
+  ? new Date(job.nextExecution * 1000).toLocaleString()
+  : "N/A";
+
+    const statusMap = {
+  0: "Successful",
+  1: "Running",
+  2: "Timeout",
+  3: "HTTP Error",
+  4: "Connection Error",
+  5: "Bad Response",
+};
+
+const status = statusMap[job.lastStatus] || "Unknown";
     const div = document.createElement("div");
     div.className = "job";
     div.innerHTML = `
-      <p><strong>ID:</strong> ${job.jobId}</p>
-      <p><strong>Title:</strong> ${job.title || "N/A"}</p>
-      <p><strong>URL:</strong> ${job.url}</p>
-      <p><strong>Last Execution:</strong> ${last}</p>
-      <p><strong>Next Execution:</strong> ${next}</p>
-      <p><strong>Minutes:</strong> ${job.schedule.minutes.join(", ")}</p>
-      <div class="job-actions">
-        <button onclick="deleteJobPrompt('${job.jobId}')">Delete</button>
-      </div>
-    `;
+  <p><strong>ID:</strong> ${job.jobId}</p>
+  <p><strong>Title:</strong> ${job.title || "N/A"}</p>
+  <p><strong>URL:</strong> ${job.url}</p>
+  <p><strong>Last Execution:</strong> ${last}</p>
+  <p><strong>Status:</strong> ${status} (${job.lastDuration} ms)</p>
+  <p><strong>Next Execution:</strong> ${next}</p>
+  <p><strong>Minutes:</strong> ${job.schedule.minutes.join(", ")}</p>
+  <div class="job-actions">
+    <button onclick="deleteJobPrompt('${job.jobId}')">Delete</button>
+  </div>
+`;
     list.appendChild(div);
   }
 }
