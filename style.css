@@ -74,27 +74,28 @@ button:hover {
 }
 
 .whatsapp-float {
-  width: 60px;          /* Medium container */
-  height: 60px;
-  padding: 6px;         /* Smaller padding */
-  border-radius: 50%;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  background-color: #25d366;
   position: fixed;
   bottom: 20px;
   right: 20px;
-  cursor: move;
   z-index: 100;
+  padding: 8px 10px;       /* medium padding */
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
   transition: transform 0.3s;
+  background: none;
+  cursor: move;
+  width: 50px;             /* medium width */
+  height: 50px;            /* medium height */
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 }
 
 .whatsapp-float img {
-  width: 70px;     /* Bigger icon inside */
-  height: 70px;
+  width: 50px;             /* medium icon size */
+  height: 50px;
 }
+
 
 .job p {
   margin: 4px 0;
