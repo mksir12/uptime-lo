@@ -87,14 +87,15 @@ button:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 60px;        /* medium size */
-  height: 60px;
+  width: 70px;        /* medium size */
+  height: 70px;
 }
 
 .whatsapp-float img {
-  width: 40px;       /* bigger icon */
-  height: 40px;
+  width: 48px;
+  height: 48px;
 }
+
 
 .job p {
   margin: 4px 0;
