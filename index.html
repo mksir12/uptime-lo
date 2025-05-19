@@ -132,17 +132,16 @@ const statusEmoji = (statusCode === 0 || statusCode === 1) ? "🟢" : "🔴";
     const div = document.createElement("div");
     div.className = "job";
     div.innerHTML = `
-  <p><strong>ID:</strong> ${job.jobId}</p>
-  <p><strong>Title:</strong> ${job.title || "N/A"}</p>
-  <p><strong>URL:</strong> ${job.url}</p>
-  <p><strong>Last Execution:</strong> ${new Date(job.lastExecution * 1000).toLocaleString()}</p>
-  <p><strong>Status:</strong> ${statusText} (${job.lastDuration} ms) ${statusEmoji}</p>
-  <p><strong>Next Execution:</strong> ${new Date(job.nextExecution * 1000).toLocaleString()}</p>
-  <p><strong>Minutes:</strong> ${job.schedule.minutes.join(", ")}</p>
-  <div class="job-actions">
-    <button onclick="deleteJobPrompt('${job.jobId}')">Delete</button>
-  </div>
+  <p><strong>ID:</strong> ${job.jobId}</p>
+  <p><strong>Title:</strong> ${job.title || "N/A"}</p>
+  <p><strong>URL:</strong> ${job.url}</p>
+  <p><strong>Last Execution:</strong> ${new Date(job.lastExecution * 1000).toLocaleString()}</p>
+  <p><strong>Status:</strong> ${statusText} (${job.lastDuration} ms) ${statusEmoji}</p>
+  <p><strong>Next Execution:</strong> ${new Date(job.nextExecution * 1000).toLocaleString()}</p>
+  <p><strong>Minutes:</strong> ${job.schedule.minutes.join(", ")}</p>
+  <div class="job-actions"><button onclick="deleteJobPrompt('${job.jobId}')">Delete</button></div>
 `;
+
     list.appendChild(div);
   }
 }
