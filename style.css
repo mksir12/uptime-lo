@@ -78,17 +78,22 @@ button:hover {
   bottom: 20px;
   right: 20px;
   z-index: 100;
-  padding: 10px;
+  padding: 6px;            /* smaller padding */
   border-radius: 50%;
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
   transition: transform 0.3s;
-  background: none; /* No background */
+  background: none;
+  cursor: move;
+  width: 40px;             /* set width */
+  height: 40px;            /* set height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.whatsapp-float {
-  left: auto;
-  top: auto;
-  cursor: move;
+.whatsapp-float img {
+  width: 24px;             /* smaller icon */
+  height: 24px;
 }
 
 .job p {
