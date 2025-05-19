@@ -88,3 +88,7 @@ button:hover {
 .whatsapp-float:hover {
   transform: scale(1.1);
 }
+
+.job p {
+  margin: 4px 0;
+}
