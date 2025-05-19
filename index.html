@@ -31,31 +31,6 @@
   </div>
 
   <script>
-    const waBtn = document.querySelector('.whatsapp-float');
-
-  let isDragging = false, offsetX, offsetY;
-
-  waBtn.addEventListener('mousedown', (e) => {
-    isDragging = true;
-    offsetX = e.clientX - waBtn.getBoundingClientRect().left;
-    offsetY = e.clientY - waBtn.getBoundingClientRect().top;
-    waBtn.style.transition = 'none';
-  });
-
-  document.addEventListener('mousemove', (e) => {
-    if (isDragging) {
-      waBtn.style.left = (e.clientX - offsetX) + 'px';
-      waBtn.style.top = (e.clientY - offsetY) + 'px';
-      waBtn.style.right = 'auto';
-      waBtn.style.bottom = 'auto';
-    }
-  });
-
-  document.addEventListener('mouseup', () => {
-    isDragging = false;
-    waBtn.style.transition = 'transform 0.3s';
-  });
-    
     const API_BASE = "https://api.cron-job.org";
     const API_KEY = "cJ2az5pzPHzPVFvSHpD/6cBwkZGMy5/rlRAcVDkLOYk=";
     const ADMIN_SECRET = "ogg"; // Change this admin secret here
